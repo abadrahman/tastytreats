@@ -1,0 +1,37 @@
+{% extends  layout %}
+
+{% block  content %}
+
+  <div class="row">
+    <div class="col">
+      <h1>Submissions</h1>
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Message</th>
+            <th scope="col">Subscribed</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+        {# //loop through the data #}
+        {% for item in data %}
+          <tr>          
+          {% for key, value in item %}  
+              <td>{{ value }}</td>
+          {% endfor %}
+        </tr>
+        {% else %}
+          {# Nothing to display #}
+        {% endfor %}
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+{% endblock %}

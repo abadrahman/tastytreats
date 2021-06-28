@@ -1,0 +1,74 @@
+{% extends  layout %}
+
+
+
+{% block  content %}
+  <h1 class='display-3'>Welcome to Tasty Treats</h1>
+
+
+  <div class="row py-5">
+    <div class="col-md-8">
+     
+      {% if error %}
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong> {{ error }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endif %}
+
+      <h2>Inquiry form</h2>
+      <p>Please fill in the fields below. We will get in touch shortly.</p>
+      
+      <form method="post" action="/" class="row g-3 needs-validation" novalidate>
+        <div class="col-12">
+          <label for="validationCustom01" class="form-label">Name</label>
+          <input name="name" type="text" class="form-control" id="validationCustom01" value="" required>
+          <div class="valid-feedback">
+            
+          </div>
+            <div class="invalid-feedback">
+            Please enter your name
+            </div>
+        </div>
+        <div class="col-12">
+          <label for="validationCustom02" class="form-label">Email</label>
+          <input name="email" type="email" class="form-control" id="validationCustom02" value="" required>
+          <div class="valid-feedback">
+            
+          </div>
+           <div class="invalid-feedback">
+            Please provide a valid email address
+            </div>
+        </div>
+        
+        <div class="col-md-12">
+          <label for="validationCustom03" class="form-label">Message</label>
+          <textarea name="message" class="form-control" id="validationCustom03" rows="4"  required></textarea>
+          <div class="invalid-feedback">
+            Please provide a Message
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-check">
+            <label class="form-check-label">
+            <input name="subscribe" class="form-check-input" type="checkbox" value="Yes">
+              Subscribe to Tasty Treats newsletter
+            </label>
+          </div>
+        </div>
+ 
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block footer %}
+  <script type="text/javascript" src="/javascripts/forms.js"></script>
+{% endblock %}
